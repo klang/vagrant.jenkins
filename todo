@@ -1,0 +1,10 @@
+- configure jenkins default.conf in /etc
+    > Jenkins httpListenAddress from its default of 0.0.0.0 to 127.0.0.1 or any
+    > Apache-level restrictions can be easily bypassed by hitting the Jenkins
+    > port directly. - from:
+    > https://wiki.jenkins-ci.org/display/JENKINS/Running+Jenkins+behind+Apache
+
+- more tweaking of jenkins default.conf
+- backup dir for jobs
+- plugins
+- default user

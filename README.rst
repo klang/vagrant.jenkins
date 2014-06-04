@@ -19,7 +19,8 @@ Dependencies
 ============
 
 - virtualenv
-- ...
+- `VirtualBox`_
+- `Vagrant`_
 
 Installation
 ============
@@ -65,4 +66,5 @@ GPLv2
 .. _Ubuntu: http://www.ubuntu.com/server
 .. _Debian: https://www.debian.org/
 .. _Ansible: http://www.ansible.com/home
-
+.. _VirtualBox: https://www.virtualbox.org/
+.. _Vagrant: http://www.vagrantup.com/

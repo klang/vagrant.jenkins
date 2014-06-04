@@ -10,3 +10,6 @@
    - apt-upgrade
    - ubuntu_packages
    - install_jenkins
+
+  handlers:
+   - include: handlers.yml

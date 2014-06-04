@@ -6,9 +6,9 @@
   sudo: yes
 
   roles:
-   - apt-update
-   - apt-upgrade
-   - ubuntu_packages
+      #   - apt-update
+      #   - apt-upgrade
+      #   - ubuntu_packages
    - install_jenkins
 
   handlers:

@@ -1,0 +1,12 @@
+---
+
+- name: Installs Jenkins on Ubuntu 14.04
+  hosts: all
+  user: vagrant
+  sudo: yes
+
+  roles:
+   - apt-update
+   - apt-upgrade
+   - ubuntu_packages
+   - install_jenkins

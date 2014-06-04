@@ -1,12 +1,12 @@
 ---
 
-- name: jenkins-install | Add apt key
+- name: Add jenkins apt key
   apt_key: url=http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key id=D50582E6
 
-- name: jenkins-install | Add apt repo
+- name: Add jenkins apt repo
   apt_repository: repo='deb http://pkg.jenkins-ci.org/debian binary/' update_cache=yes
 
-- name: jenkins-install | Install jenkins
+- name: Install jenkins
   apt: pkg=jenkins
 
 #- name: jenkins-install | Setup passlib

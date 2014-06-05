@@ -18,7 +18,10 @@ Features
 Dependencies
 ============
 
-- virtualenv
+- virtualenv [we use the one from the Ubuntu repos]::
+
+    sudo apt install python-virtualenv
+
 - `VirtualBox`_
 - `Vagrant`_
 

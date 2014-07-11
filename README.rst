@@ -13,7 +13,7 @@ Features
 
 - Makefile for easy setup
 - provioning is done via `Ansible`_
-
+- uses `hostupdater`_
 
 Dependencies
 ============
@@ -71,3 +71,5 @@ GPLv2
 .. _Ansible: http://www.ansible.com/home
 .. _VirtualBox: https://www.virtualbox.org/
 .. _Vagrant: http://www.vagrantup.com/
+.. _hostupdater: https://github.com/cogitatio/vagrant-hostsupdater
+

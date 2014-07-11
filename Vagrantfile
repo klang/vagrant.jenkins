@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
 
     config.vm.network "public_network", :bridge => 'eth0'
 
-    config.vm.hostname = "jenkins"
+    config.vm.hostname = "jenkins.leftxs.org"
 
     config.vm.provider "virtualbox" do |vb|
         #vb.customize ["modifyvm", :id, "--memory", "1024"]

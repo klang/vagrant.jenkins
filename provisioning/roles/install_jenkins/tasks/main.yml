@@ -21,6 +21,9 @@
 - name: Install cron to backup jenkins
   cron: state=present name="Backup Jenkins" minute=0 hour=2 job="tar zcvf /opt/jenkins/backup.tar.gz -C /opt/jenkins /var/lib/jenkins"
 
+- name: Push jenkins conf
+  copy: src=jenkins dest=/etc/default/jenkins mode=0644
+
 - name: Install Apache2 for jenkins
   apt: name={{item}} state=present
   with_items:
@@ -59,4 +62,4 @@
 #  command: a2dissite default-ssl
 
   notify: restart apache
-
+  notify: restart jenkins

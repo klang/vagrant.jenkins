@@ -34,13 +34,13 @@
   apache2_module: state=present name=proxy_http
 
 - name: Push future default virtual host configuration
-  copy: src=jenkins.conf dest=/etc/apache2/sites-available/ mode=0644
+  copy: src=jenkins.leftxs.org dest=/etc/apache2/sites-available/ mode=0644
 
 - name: Deactivates the default virtualhost
   command: a2dissite 000-default.conf
 
 - name: Activate jenkins virtualhost
-  command: a2ensite jenkins.conf
+  command: a2ensite jenkins.leftxs.org
 
 - name: Check that our config is valid
   command: apache2ctl configtest
@@ -48,7 +48,7 @@
   ignore_errors: True
 
 - name: Rolling back - Removing out virtualhost
-  command: a2dissite jenkins.conf
+  command: a2dissite jenkins.leftxs.org
   when: result|failed
 
 - name: Rolling back - Ending playbook

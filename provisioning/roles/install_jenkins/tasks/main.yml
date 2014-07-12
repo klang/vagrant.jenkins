@@ -13,10 +13,10 @@
 #  apt: pkg=python-passlib
 #  when: jenkins_proxy_auth
 
-#- name: Create directory for jenkins backup
-#  file: path=/opt/jenkins state=directory owner=jenkins group=nogroup
-#  sudo: yes
-#  sudo_user: jenkins
+- name: Create directory for jenkins backup
+  file: path=/opt/jenkins state=directory owner=jenkins group=nogroup
+  sudo: yes
+  sudo_user: jenkins
 
 - name: Install cron to backup jenkins
   cron: state=present name="Backup Jenkins" minute=0 hour=2 job="tar zcvf /opt/jenkins/backup.tar.gz -C /opt/jenkins /var/lib/jenkins"

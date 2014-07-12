@@ -44,6 +44,7 @@ If you don't want to use the Makefile you can also do it from hand::
     virtualenv --python=python2.7 .
     source bin/activate
     pip install ansible
+    vagrant plugin install vagrant-hostsupdater
 
 Now work with vagrant as usual::
 

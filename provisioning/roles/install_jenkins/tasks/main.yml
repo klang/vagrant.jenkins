@@ -24,6 +24,9 @@
 - name: Push jenkins conf
   copy: src=jenkins dest=/etc/default/jenkins mode=0644
 
+- name: Ensure jenkins user has ssh key
+  user: name=jenkins state=present generate_ssh_key=yes
+
 - name: Install Apache2 for jenkins
   apt: name={{item}} state=present
   with_items:

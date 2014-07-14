@@ -16,7 +16,6 @@
 - name: Create directory for jenkins backup
   file: path=/opt/jenkins state=directory owner=jenkins group=nogroup
   sudo: yes
-  sudo_user: jenkins
 
 - name: Install cron to backup jenkins
   cron: state=present name="Backup Jenkins" minute=0 hour=2 job="tar zcvf /opt/jenkins/backup.tar.gz -C /opt/jenkins /var/lib/jenkins"
@@ -26,6 +25,13 @@
 
 - name: Ensure jenkins user has ssh key
   user: name=jenkins state=present generate_ssh_key=yes
+
+- name: Download SWARM plugin for jenkins
+  get_url: dest=/var/lib/jenkins/plugins url=http://updates.jenkins-ci.org/latest/{{ item }}.hpi owner=jenkins group=jenkins
+  with_items:
+      - swarm
+  notify:
+      - restart jenkins
 
 - name: Install Apache2 for jenkins
   apt: name={{item}} state=present

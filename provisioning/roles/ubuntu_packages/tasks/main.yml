@@ -13,3 +13,15 @@
     - git
     - vim
 
+- name: Make sure locales are installed
+  apt: name={{item}} state=present
+  with_items:
+    - language-pack-en
+    - language-pack-en-base
+
+- name: Configure locales
+  locale_gen: name=en_US.UTF-8 state=present
+
+- name: Set timezone to Europe/Amsterdam
+  template: dest=/etc/timezone src=timezone.j2
+  notify: update tzdata

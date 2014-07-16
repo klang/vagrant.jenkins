@@ -6,3 +6,6 @@
 
 - name: restart jenkins
   service: name=jenkins state=restarted
+
+- name: update tzdata
+  command: dpkg-reconfigure --frontend noninteractive tzdata

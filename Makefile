@@ -12,3 +12,5 @@ bootstrap:
 
 	@echo -e "${OK_COLOR}>>> Installing vagrant-hostupdater ...${NO_COLOR}"
 	vagrant plugin install vagrant-hostsupdater
+
+	@echo -e "${OK_COLOR}Please activate your VirtualEnv, before you proceed!${NO_COLOR}"
